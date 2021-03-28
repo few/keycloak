@@ -18,6 +18,7 @@
 package org.keycloak.common.util;
 
 import java.io.UnsupportedEncodingException;
+import java.math.BigInteger;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.nio.ByteBuffer;
@@ -591,4 +592,7 @@ public class Encode
       return decode(string);
    }
 
+   public static String hexString(byte[] bytes) {
+      return (new BigInteger(bytes)).toString(16);
+   }
 }
